@@ -1,0 +1,8 @@
+.ativo {
+  display: none;
+}
+
+main {
+  background-color: #fcfcfc;
+  padding: var(--padding);
+}
