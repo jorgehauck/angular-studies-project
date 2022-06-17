@@ -9,8 +9,8 @@ import { TransferenciaService } from 'src/services/transferencia.service';
   styleUrls: ['./nova-transferencia.component.scss'],
 })
 export class NovaTransferenciaComponent {
-  @Output() aoTransferir = new EventEmitter<any>();
 
+  @Output() aoTransferir = new EventEmitter<any>();
 
   transferencia: Transferencia;
 
@@ -26,6 +26,7 @@ export class NovaTransferenciaComponent {
     const valorEmitir: Transferencia  = { valor: this.valor, destino: this.destino };
     this.service.adicionar(valorEmitir).subscribe(data => {
         console.log(data);
+        this.limparCampos();
     },
     (error) => {
       console.error(error);
